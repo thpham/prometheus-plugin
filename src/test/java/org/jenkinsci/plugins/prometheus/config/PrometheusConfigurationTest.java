@@ -121,6 +121,9 @@ public class PrometheusConfigurationTest {
         config.accumulate("path", "prometheus");
         config.accumulate("useAuthenticatedEndpoint", "true");
         config.accumulate("defaultNamespace", "default");
+        config.accumulate("usePushgateway", "true");
+        config.accumulate("pushgatewayAddress", "push.domain.tld/prefix");
+        config.accumulate("pushgatewayJobAttributeName", "push_job");
         config.accumulate("jobAttributeName", "jenkins_job");
         config.accumulate("countSuccessfulBuilds", "true");
         config.accumulate("countUnstableBuilds", "true");

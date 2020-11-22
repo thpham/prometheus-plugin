@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>3.56</version>
+    <version>4.13</version>
     <relativePath />
   </parent>
 
@@ -17,9 +17,9 @@
   <inceptionYear>2016</inceptionYear>
 
   <properties>
-    <jenkins.version>2.204.1</jenkins.version>
+    <jenkins.version>2.249.3</jenkins.version>
     <java.level>8</java.level>
-    <prometheus.simpleClientJava.version>0.8.0</prometheus.simpleClientJava.version>
+    <prometheus.simpleClientJava.version>0.9.0</prometheus.simpleClientJava.version>
     <workflow.api.version>2.38</workflow.api.version>
     <workflow.job.version>2.36</workflow.job.version>
     <workflow.step.version>2.22</workflow.step.version>
@@ -158,6 +158,11 @@
       <version>${prometheus.simpleClientJava.version}</version>
     </dependency>
     <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient_pushgateway</artifactId>
+      <version>${prometheus.simpleClientJava.version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>junit</artifactId>
       <version>${jenkins.junit.version}</version>
@@ -186,6 +191,23 @@
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
       <version>${slf4j.version}</version>
+    </dependency>
+    <!-- protobuf -->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>3.11.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
+      <version>3.11.1</version>
+    </dependency>
+    <!-- snappy compression -->
+    <dependency>
+      <groupId>org.xerial.snappy</groupId>
+      <artifactId>snappy-java</artifactId>
+      <version>1.1.7.3</version>
     </dependency>
 
     <!-- Test only -->

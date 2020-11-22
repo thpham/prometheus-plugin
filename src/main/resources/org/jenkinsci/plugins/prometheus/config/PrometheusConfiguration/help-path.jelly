@@ -17,6 +17,21 @@
   </div>
   <div>
     <p>
+      Pushgateway Address. Ex.: "base.domain.tld/prefix" ("../metrics" will be appended)
+    </p>
+  </div>
+  <div>
+    <p>
+      Pushgateway Job Attribute Name: label added to the metrics when ingested by the Pushgateway
+    </p>
+  </div>
+  <div>
+    <p>
+      Enable sending metrics to a Pushgateway.
+    </p>
+  </div>
+  <div>
+    <p>
       Collecting metrics period in seconds (effectively loaded after restart).
     </p>
   </div>

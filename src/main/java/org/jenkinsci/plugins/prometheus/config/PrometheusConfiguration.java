@@ -38,6 +38,9 @@ public class PrometheusConfiguration extends GlobalConfiguration {
     private String defaultNamespace = "default";
     private String jobAttributeName = "jenkins_job";
     private boolean useAuthenticatedEndpoint;
+    private String pushgatewayAddress = "push.domain.tld/prefix";
+    private String pushgatewayJobAttributeName = "push_job";
+    private boolean usePushgateway = false;
     private Long collectingMetricsPeriodInSeconds = null;
 
     private boolean countSuccessfulBuilds = true;
@@ -65,6 +68,9 @@ public class PrometheusConfiguration extends GlobalConfiguration {
         setPath(json.getString("path"));
         useAuthenticatedEndpoint = json.getBoolean("useAuthenticatedEndpoint");
         defaultNamespace = json.getString("defaultNamespace");
+        pushgatewayAddress = json.getString("pushgatewayAddress");
+        pushgatewayJobAttributeName = json.getString("pushgatewayJobAttributeName");
+        usePushgateway = json.getBoolean("usePushgateway");
         jobAttributeName = json.getString("jobAttributeName");
         countSuccessfulBuilds = json.getBoolean("countSuccessfulBuilds");
         countUnstableBuilds = json.getBoolean("countUnstableBuilds");
@@ -110,6 +116,27 @@ public class PrometheusConfiguration extends GlobalConfiguration {
 
     public void setDefaultNamespace(String path) {
         this.defaultNamespace = path;
+        save();
+    }
+
+    public String getPushgatewayAddress() { return pushgatewayAddress; }
+
+    public void setPushgatewayAddress(String pushgatewayAddress) {
+        this.pushgatewayAddress = pushgatewayAddress;
+        save();
+    }
+
+    public String getPushgatewayJobAttributeName() { return pushgatewayJobAttributeName; }
+
+    public void setPushgatewayJobAttributeName(String pushgatewayJobAttributeName) {
+        this.pushgatewayJobAttributeName = pushgatewayJobAttributeName;
+        save();
+    }
+
+    public boolean isUsePushgateway() { return usePushgateway; }
+
+    public void setUsePushgateway(boolean usePushgateway) {
+        this.usePushgateway = usePushgateway;
         save();
     }
 

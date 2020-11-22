@@ -40,6 +40,10 @@ public class PrometheusAsyncWorker extends AsyncPeriodicWork {
         logger.debug("Collecting prometheus metrics");
         prometheusMetrics.collectMetrics();
         logger.debug("Prometheus metrics collected successfully");
+        if (PrometheusConfiguration.get().isUsePushgateway()){
+            prometheusMetrics.sendMetrics();
+            logger.debug("Prometheus metrics sent successfully");
+        }
     }
     
     @Override
